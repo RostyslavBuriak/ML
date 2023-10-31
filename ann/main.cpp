@@ -87,9 +87,11 @@ int main() {
 
   orNet.Learn();
 
-  std::cout << std::endl <<  "\tSuccesses/rate\t" << static_cast<double>(correct) << "/"
+  std::cout << std::endl
+            << "\tSuccesses/rate\t" << static_cast<double>(correct) << "/"
             << static_cast<double>(correct) / (150. - static_cast<double>(n))
-            << std::endl << std::endl;
+            << std::endl
+            << std::endl;
 
   for (const auto &v : xorInputs) {
     const auto predicted = xorNet.Predict(v)[0];
@@ -103,3 +105,17 @@ int main() {
     std::cout << v[0] << " " << v[1] << "\t" << predicted << std::endl;
   }
 }
+
+// iteration/error: 1999/0.00182907
+
+//        Successes/rate  30/1
+
+// 0 0     0.0502368
+// 1 0     0.954338
+// 0 1     0.954319
+// 1 1     0.0489037
+
+// 0 0     0.0671991
+// 1 0     0.963002
+// 0 1     0.962961
+// 1 1     0.992638
